@@ -21,9 +21,9 @@ type defaultImpl struct{}
 //go:generate go run github.com/maxbrunsfeld/counterfeiter/v6 -generate
 //counterfeiter:generate . impl
 type impl interface {
-	VerifyInternal(*Signer, string) (*SignedObject, error)
+	VerifyImageInternal(*Signer, string) (*SignedImage, error)
 }
 
-func (*defaultImpl) VerifyInternal(signer *Signer, reference string) (*SignedObject, error) {
-	return signer.Verify(reference)
+func (*defaultImpl) VerifyImageInternal(signer *Signer, reference string) (*SignedImage, error) {
+	return signer.VerifyImage(reference)
 }

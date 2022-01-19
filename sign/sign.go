@@ -62,12 +62,12 @@ func (s *Signer) UploadBlob(path string) error {
 }
 
 // Sign can be used to sign any provided reference by using keyless signing.
-func (s *Signer) Sign(reference string) (*SignedObject, error) {
+func (s *Signer) SignImage(reference string) (*SignedImage, error) {
 	s.log.Infof("Signing reference: %s", reference)
 
 	// TODO: unimplemented
 
-	object, err := s.VerifyInternal(s, reference)
+	object, err := s.VerifyImageInternal(s, reference)
 	if err != nil {
 		return nil, errors.Wrapf(err, "verify reference: %s", reference)
 	}
@@ -77,10 +77,10 @@ func (s *Signer) Sign(reference string) (*SignedObject, error) {
 // Verify can be used to validate any remote reference. The returned signed
 // object will contain additional information if the verification was
 // successful.
-func (s *Signer) Verify(reference string) (*SignedObject, error) {
+func (s *Signer) VerifyImage(reference string) (*SignedImage, error) {
 	s.log.Infof("Verifying reference: %s", reference)
 
 	// TODO: unimplemented
 
-	return &SignedObject{}, nil
+	return &SignedImage{}, nil
 }
