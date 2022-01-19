@@ -16,19 +16,19 @@ limitations under the License.
 
 package sign
 
-// SignedObject contains additional metadata from the signing and verification
+// SignedImage contains additional metadata from the signing and verification
 // process.
-type SignedObject struct {
+type SignedImage struct {
 	reference string
 	digest    string
 }
 
 // Reference returns the OCI registry reference of the object.
-func (m *SignedObject) Reference() string {
+func (m *SignedImage) Reference() string {
 	return m.reference
 }
 
 // Digest returns the digest of the signed object.
-func (m *SignedObject) Digest() string {
+func (m *SignedImage) Digest() string {
 	return m.digest
 }
