@@ -1016,7 +1016,7 @@ func (r *Repo) Tags() (res []string, err error) {
 	return res, nil
 }
 
-// Add adds a file to the staging area of the repo
+// Add adds a file to the  staging area of the repo
 func (r *Repo) Add(filename string) error {
 	return errors.Wrapf(
 		filterCommand(
